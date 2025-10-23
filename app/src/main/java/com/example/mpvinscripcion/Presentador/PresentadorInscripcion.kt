@@ -11,6 +11,8 @@ class PresentadorInscripcion (private val vista: ContratoInscrip.Vista): Contrat
     {
         if (promedio > 0) {
             val montoFinal = modelo.calcularPago(promedio)
+
+            vista.showRes(montoFinal)
         } else {
             vista.showError("dato no validoo")
         }
