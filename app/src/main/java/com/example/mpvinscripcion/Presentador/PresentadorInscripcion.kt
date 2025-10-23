@@ -1,0 +1,21 @@
+package com.example.mpvinscripcion.Presentador
+
+import com.example.mpvinscripcion.contratos.ContratoInscrip
+import com.example.mpvinscripcion.modelo.ModeloInscripcion
+
+class PresentadorInscripcion (private val vista: ContratoInscrip.Vista): ContratoInscrip.Presentador{
+
+    private val modelo: ContratoInscrip.Modelo= ModeloInscripcion()
+
+    override fun calcularPago(promedio: Float)
+    {
+        if (promedio > 0) {
+            val montoFinal = modelo.calcularPago(promedio)
+            val totalPago = 0.0f
+            vista.showRes(totalPago)
+        } else {
+            vista.showError("dato no validoo")
+        }
+    }
+
+    }
